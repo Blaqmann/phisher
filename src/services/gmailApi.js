@@ -1,68 +1,6 @@
 // src/services/gmailApi.js
-import { toast } from 'react-toastify';
 import { db } from '../firebaseConfig';
 import { doc, getDoc, collection, addDoc } from "firebase/firestore";
-
-
-// Function to get the label ID for "PHISHER"
-const getPhisherLabelId = async () => {
-    const token = localStorage.getItem('googleToken');
-    if (!token) {
-        throw new Error('Google token not found');
-    }
-
-    const response = await fetch(`https://www.googleapis.com/gmail/v1/users/me/labels`, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    });
-
-    if (!response.ok) {
-        throw new Error('Failed to fetch labels');
-    }
-
-    const data = await response.json();
-    const phisherLabel = data.labels.find(label => label.name === "PHISHER");
-
-    if (!phisherLabel) {
-        throw new Error('Label "PHISHER" not found in Gmail account.');
-    }
-
-    return phisherLabel.id;
-};
-
-
-// Function to flag email in the user's Gmail inbox
-// eslint-disable-next-line
-const flagEmailAsSuspicious = async (emailId) => {
-    try {
-        const labelId = await getPhisherLabelId();
-        const token = localStorage.getItem('googleToken');
-        if (!token) {
-            throw new Error('Google token not found');
-        }
-
-        const response = await fetch(`https://www.googleapis.com/gmail/v1/users/me/messages/${emailId}/modify`, {
-            method: 'POST',
-            headers: {
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                addLabelIds: [labelId], // Use the label ID for "PHISHER"
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('Failed to flag email as suspicious');
-        }
-
-        toast.success('Email flagged as suspicious.');
-    } catch (error) {
-        console.error('Error flagging email:', error);
-        toast.error('Failed to flag email as suspicious.');
-    }
-}
 
 
 // Fetch emails using the Gmail API and save only essential data

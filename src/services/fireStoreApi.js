@@ -169,3 +169,21 @@ export const fetchEmailsApi = async () => {
         throw new Error('Failed to fetch emails');
     }
 };
+
+const saveEmailToFirestore = async (email) => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (!user) throw new Error('No user logged in');
+
+    try {
+        await addDoc(collection(db, "emails"), {
+            ...email,
+            userId: user.uid, // Store the user ID
+            createdAt: new Date(),
+        });
+    } catch (error) {
+        console.error("Error saving email:", error);
+        throw error;
+    }
+};
