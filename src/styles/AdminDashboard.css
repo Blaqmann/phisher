@@ -1,0 +1,64 @@
+/* src/pages/AdminDashboard.css */
+
+.admin-dashboard-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-dashboard-title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+}
+
+.admin-dashboard-section {
+    margin-bottom: 20px;
+}
+
+.admin-dashboard-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.admin-dashboard-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-dashboard-button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 48%;
+}
+
+.admin-dashboard-button:hover {
+    background-color: #0056b3;
+}
+
+.admin-dashboard-logout {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.admin-dashboard-logout:hover {
+    background-color: #c82333;
+}

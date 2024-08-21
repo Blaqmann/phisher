@@ -1,0 +1,107 @@
+/* src/pages/ViewScannedEmails.css */
+
+.inbox-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inbox-header {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.inbox-list {
+    margin-top: 20px;
+}
+
+.inbox-headers {
+    display: flex;
+    padding: 15px 20px;
+    background-color: #f1f1f1;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+    color: #333;
+}
+
+.inbox-header-from,
+.inbox-header-subject,
+.inbox-header-snippet,
+.inbox-header-status {
+    text-transform: uppercase;
+}
+
+.inbox-header-from {
+    flex-basis: 20%;
+}
+
+.inbox-header-subject {
+    flex-basis: 40%;
+}
+
+.inbox-header-snippet {
+    flex-basis: 30%;
+    text-align: left;
+}
+
+.inbox-header-status {
+    flex-basis: 10%;
+    text-align: center;
+}
+
+.inbox-item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.inbox-item:hover {
+    background-color: #f5f5f5;
+}
+
+.inbox-item-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inbox-item-from {
+    flex-basis: 25%;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.inbox-item-subject {
+    flex-basis: 35%;
+    color: #333;
+}
+
+.inbox-item-snippet {
+    flex-basis: 30%;
+    color: #666;
+    text-align: left;
+}
+
+.inbox-item-status {
+    flex-basis: 10%;
+    color: #888;
+    text-align: center;
+}
+
+.inbox-empty {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    margin-top: 40px;
+}

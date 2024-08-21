@@ -1,0 +1,68 @@
+/* src/pages/UrlScan.css */
+.url-scan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.url-input {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.analyze-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.analyze-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.loader {
+    margin: 20px 0;
+}
+
+.report-container {
+    margin-top: 20px;
+    text-align: left;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-container.safe {
+    border-left: 5px solid #28a745;
+}
+
+.report-container.phishing {
+    border-left: 5px solid #dc3545;
+}
+
+.error {
+    color: red;
+    margin-bottom: 20px;
+}
