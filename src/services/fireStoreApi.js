@@ -2,6 +2,7 @@
 import { toast } from 'react-toastify';
 import { db } from '../firebaseConfig';
 import { doc, setDoc, getDoc, collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 // Helper function to decode base64
 const decodeBase64 = (base64) => {
